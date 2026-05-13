@@ -1,0 +1,36 @@
+1.Talk to Google and atleast use Gemini 3.0 security agents to start integrating immediately on CI/CD pipelines. We already have this foundational model inside and therefore it will be fastest.
+
+2.Fast track claude/anthropic pipeline into Neev. We are working on it but this is still little long shot.
+
+3.Ask Sameer to talk to Palo Alto and see if we can do some specific AI SOC when they start work while not worrying abt the existing SOC ( we can wait few months for them to integrate)
+
+4.Keep engagement with Govt and IBA on for whatever worth it is.
+
+
+
+o all we can do is to fight on our own by
+
+1.Patching whatever we can ( not optimum but hygiene)
+
+2.Bring in AI into Devsecops. Lets push hard here as we need some models in although not as powerful as mythos. AI to fight AI is critical.
+
+3.Get micro-segmentation right.
+
+4.Look at alternative technologies like white box cryptography ( WBC) architecture for critical infrastructure and application. 
+
+5.Hardware rooting if possible like Chinese banks.
+
+6.Keep putting pressure on RBI/IBA etc to do something like atleast allowing Mythos from public cloud without localisation. Localisation can happen eventually but right now we are beggers not choosers.
+
+Any other suggestions??
+
+Jenkins: For CI and CD Pipeline, Bank has centeral Jenkins master with different slave machine from different project. Bank has standard jenkinkins pipeline for every project , the project can change the build pipeline but deployment pipeline is very standard in the bank. Deployment pipeline scan the docker image for any vulernbility, via Prisma container scanning tool and if there is no fixable vulnerbility then it deplys the immage
+Docker Registry: Bank has Quay as standard registry along with google artifact registry as another option where images can be pushed after buiding
+Checkmarks: Sast code scanning
+SonarCube: For dynamic code scanning
+Obserbability: we have different obserbability tools like Site 24X7 and Dynatrace. these tools are  only used to monitoring mets  and APM
+Logging: We have only AWS and GCP based application where we deploy the application, and we are putting all logs in GCP Cloud logging or AWS cloud watch
+Code Reposatory: Github enterprise hosted within the bank
+Bug tracking System: Jira
+Most of our Application are Deployed in GKE and EKS kubernetes , our Monitoring dashboards are in either Dynatrace, or Grafana
+ 
